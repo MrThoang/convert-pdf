@@ -1,14 +1,22 @@
+"use client";
 import LoGo from "@/app/components/Icon/LoGo"
 import UpLoadIcon from "@/app/components/Icon/UpLoadIcon"
 import Image from 'next/image'
 import profilePic from '../../images/banner.svg'
 import MergeIcon from "@/app/components/Icon/MergeIcon"
 import FileIcon from "@/app/components/Icon/FileIcon"
+import { useState } from "react"
+import { MergePDF } from "../merge-pdf/MergePDF";
 
 export const HomePage = () => {
+    const [isMerge, setIsMerge] = useState(false)
+    const handleOpenMerge = () => {
+
+    }
+
     return (
         <>
-            <div className="border-b py-8">
+            <div className="border-b py-8 bg-[url('images/background.svg')]">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center">
                         <LoGo />
@@ -38,30 +46,24 @@ export const HomePage = () => {
             <div className="text-center mt-20">
                 <h1 className="text-[65px] font-bold">Most Popular PDF Tools</h1>
             </div>
-            <div className="grid grid-cols-2 gap-x-8 mt-14 mb-20">
-                <div className="shadow-[0px_4px_24px_0px_rgba(0,0,0,0.1)] text-center p-12">
+            {!isMerge && (<div className="grid grid-cols-2 gap-x-8 mt-14 mb-20">
+                <div onClick={() => setIsMerge(true)} className="shadow-[0px_4px_24px_0px_rgba(0,0,0,0.1)] text-center p-12 cursor-pointer">
                     <div className="flex items-center justify-center mb-[18px]">
                         <MergeIcon />
-                        <p className="font-bold ml-8">Merge PDF</p>
+                        <p className="font-bold ml-8 text-2xl">Merge PDF</p>
                     </div>
-                    <p>Combine multiple PDFs into one unified document</p>
+                    <p className="text-gray-500 text-lg">Combine multiple PDFs into one unified document</p>
                 </div>
-                <div className="shadow-[0px_4px_24px_0px_rgba(0,0,0,0.1)] text-center p-12">
+                <div className="shadow-[0px_4px_24px_0px_rgba(0,0,0,0.1)] text-center p-12 cursor-pointer">
                     <div className="flex items-center justify-center mb-[18px]">
                         <FileIcon />
-                        <p className="font-bold ml-8">Convert PDF</p>
+                        <p className="font-bold ml-8 text-2xl">Convert PDF</p>
                     </div>
-                    <p>Convert image to editable PDF</p>
+                    <p className="text-gray-500 text-lg">Convert image to editable PDF</p>
                 </div>
-            </div>
-            <div className="grid grid-cols-2 bg-[#ECF3FE] p-7 text-[#2259C9] text-2xl">
-                <p className="font-bold">© 2022 Alright services</p>
-                <div className="flex justify-between font-bold">
-                    <p>Privacy Notice</p>
-                    <p>Term & Condition</p>
-                    <p>Contact Us</p>
-                </div>
-            </div>
+            </div >)
+            }
+            {isMerge && <MergePDF />}
         </>
     )
 }
