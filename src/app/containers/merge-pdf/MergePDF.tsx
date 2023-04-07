@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import DownIcon from "@/app/components/Icon/DownArrowIcon"
 import MergeIcon from "@/app/components/Icon/MergeIcon"
 import PdfIcon from "@/app/components/Icon/PdfIcon"
