@@ -3,6 +3,7 @@ import LoGo from "@/app/components/Icon/LoGo"
 import UpLoadIcon from "@/app/components/Icon/UpLoadIcon"
 import Image from 'next/image'
 import profilePic from '../../images/banner.svg'
+import backGroundImage from '../../images/background.svg'
 import MergeIcon from "@/app/components/Icon/MergeIcon"
 import FileIcon from "@/app/components/Icon/FileIcon"
 import { useState } from "react"
@@ -11,16 +12,13 @@ import EditIcon from "@/app/components/Icon/EditIcon";
 import DownLoadIconIcon from "@/app/components/Icon/DownLoadIcon";
 import ViewIcon from "@/app/components/Icon/ViewIcon";
 import RestartIcon from "@/app/components/Icon/RestartIcon";
+import clsx from 'clsx';
 
 export const HomePage = () => {
     const [isMerge, setIsMerge] = useState(false)
-    const handleOpenMerge = () => {
-
-    }
-
     return (
         <>
-            <div className="border-b py-8 bg-[url('images/background.svg')]">
+            <div className="border-b py-8">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center">
                         <LoGo />
@@ -73,7 +71,7 @@ export const HomePage = () => {
                 <div className="flex justify-center items-center mb-[110px]">
                    <div className="text-center">
                         <p className="font-[600] text-2xl">PDF has merged your files into a single PDF</p>
-                        <div className="flex justify-center border border-dashed  border-sky-600 p-4 my-4">
+                        <div className="flex justify-center border border-dashed border-sky-600 p-4 my-4">
                             <EditIcon />
                             <p className="text-[#2259C9] font-bold text-lg">
                                 Loremipsumissimplytext_merged.pdf - 222.5KB
@@ -90,7 +88,7 @@ export const HomePage = () => {
                             </button>
                             <button className="flex items-center min-w-[154px] rounded-full bg-[#C92268] justify-center px-4 py-2 gap-2 text-white font-bold">
                                 <RestartIcon/>
-                                Restart
+                                Restart 
                             </button>
                         </div>
                    </div>

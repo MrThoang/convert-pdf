@@ -25,7 +25,9 @@ export const MergePDF = () => {
       };
     
     return (
-        <div className="shadow-[0px_4px_24px_0px_rgba(0,0,0,0.1)] text-center p-12 cursor-pointer mb-20 mt-14">
+        <div className={clsx("text-center py-12 px-3 cursor-pointer mb-20 mt-14 bg-white",
+            files?.length ? "shadow-[0px_4px_24px_0px_rgba(249,192,103,1)]" : "shadow-[0px_4px_24px_0px_rgba(0,0,0,0.1)]"
+        )}>
             <div className="flex items-center justify-center mb-[18px]">
                 <MergeIcon />
                 <p className="font-bold ml-8 text-2xl">Merge PDF</p>
