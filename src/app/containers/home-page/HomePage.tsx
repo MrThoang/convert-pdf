@@ -12,6 +12,7 @@ import EditIcon from "@/app/components/Icon/EditIcon";
 import DownLoadIconIcon from "@/app/components/Icon/DownLoadIcon";
 import ViewIcon from "@/app/components/Icon/ViewIcon";
 import RestartIcon from "@/app/components/Icon/RestartIcon";
+import Link from "next/link";
 
 export const HomePage = () => {
     const [isMerge, setIsMerge] = useState(false)
@@ -19,10 +20,10 @@ export const HomePage = () => {
         <>
             <div className="border-b py-8">
                 <div className="flex justify-between items-center">
-                    <div className="flex items-center">
+                    <Link href="#" className="flex items-center">
                         <LoGo />
                         <p className="font-bold text-4xl ml-5">PDF TOOLS</p>
-                    </div>
+                    </Link>
                     <div>
                         <button type="button"
                             className="flex items-center rounded-full  bg-gradient-to-r to-cyan-500 from-blue-500 px-7 py-3">

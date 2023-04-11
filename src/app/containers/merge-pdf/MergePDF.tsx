@@ -24,7 +24,7 @@ export const MergePDF = () => {
       };
     
     return (
-        <div className={clsx("text-center py-12 px-3 cursor-pointer mb-20 mt-14 bg-white",
+        <div className={clsx("text-center py-12 px-3 mb-20 mt-14 bg-white",
             files?.length ? "shadow-[0px_4px_24px_0px_rgba(249,192,103,1)]" : "shadow-[0px_4px_24px_0px_rgba(0,0,0,0.1)]"
         )}>
             <div className="flex items-center justify-center mb-[18px]">
@@ -43,7 +43,7 @@ export const MergePDF = () => {
             })}
             </div>
             <div className="flex justify-center pt-[18px]">
-                <div onClick={() => {handleClickUpLoad()}} className="bg-[#F9C067] w-[519px] flex justify-center p-[27px] rounded">
+                <div onClick={() => {handleClickUpLoad()}} className="bg-[#F9C067] w-[519px] flex justify-center p-[27px] rounded cursor-pointer">
                     <div>
                         <div className="flex items-center justify-center mb-6">
                             <PdfIcon />
