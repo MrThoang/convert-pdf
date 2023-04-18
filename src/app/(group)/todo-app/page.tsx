@@ -1,20 +1,16 @@
 "use client";
 import { useState } from "react";
-import { Button } from "../components/Button";
+import { Button } from "../../components/Button";
+
 
 function Home() {
   const [job, setJob] = useState("");
-  const [jobs, setJobs] = useState(() => {
-    const storageJobs = JSON.parse(localStorage.getItem("jobs") as string);
-    return storageJobs ?? [];
-  });
+  const [jobs, setJobs] = useState([]);
 
   const handleAddToDo = () => {
     setJobs((prev: any) => {
       if (job !== "" && prev.includes(job) === false) {
         const newJobs = [...prev, job];
-        const jsonJob = JSON.stringify(newJobs);
-        localStorage.setItem("jobs", jsonJob);
         return newJobs;
       }
       return prev;
@@ -25,10 +21,7 @@ function Home() {
   const handleDelete = (item: any) => {
     const deleteJob = jobs.filter((job: any) => job !== item);
 
-    setJobs(() => {
-      localStorage.setItem("jobs", JSON.stringify(deleteJob));
-      return deleteJob;
-    });
+    setJobs(deleteJob);
   };
 
   const handleShowAll = () => {
@@ -72,14 +65,14 @@ function Home() {
               </li>
             ))}
           </ul>
-          {jobs.length > 0 && (
+          {jobs?.length > 0 && (
             <div 
                 className="h-[50px]  relative
                 before:shadow-shadowPrimary before:absolute before:h-full
                 before:inset-x-0 before:top-0 before:overflow-hidden">
                 <span className="p-4 text-lg flex justify-between relative z-10 text-gray-500">
                     <span >
-                        <span>{jobs.length} item left</span>
+                        <span>{jobs?.length} item left</span>
                     </span>
                     <div className="flex gap-x-2">
                         <Button
